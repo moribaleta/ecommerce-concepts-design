@@ -1,0 +1,157 @@
+body{
+    margin: 0;
+    overflow: hidden;
+    background-color:white;    
+}
+
+.slideshow-background-container{
+    background: white;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    z-index: -1;
+}
+
+.slideshow-background{    
+    opacity: 0.5;
+    filter: opacity(50%);
+    height: auto;
+    width: 100%;    
+    filter: blur(50px);        
+}
+
+/* Slideshow container */
+.mySlides{            
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin: 50px 0;
+}
+.mySlides img{    
+    height: 75%;    
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: all .2s ease-in-out;
+}  
+
+.mySlides img:hover{
+    box-shadow: 0 12px 24px rgba(0,0,0,0.5);
+    transition: all .2s ease-in-out;
+}  
+
+.scoll{
+    position: absolute;    
+    width: 100%;
+    height: 100%;
+
+}
+.scroll .scroll_button{    
+    z-index: 100;
+    display: block;
+    position: absolute;
+    top: 30%;
+    padding: 0 50px;    
+}
+
+.scroll .scroll_button a{
+    cursor: pointer;
+}
+
+.scroll_button img{    
+    height: 30px;
+    width: 30px;        
+    transition: all .2s ease-in-out;
+}
+
+.scroll_button img:hover{
+    height: 32px;
+    width: 32px;  
+    transition: all .2s ease-in-out;
+}
+
+.scroll .next{
+    transform: rotate(-90deg);
+    right: 0;
+}
+
+.scroll .prev{
+    transform: rotate(90deg);
+    left: 0;
+}
+/* Fading animation */
+
+.slideinright{
+    animation: slideinright 2s;
+    display: block;
+}
+
+.slideinleft{
+    animation: slideinleft 2s;
+    display: block;
+}
+
+@keyframes fading_background{
+    /*    0%{
+    opacity:0
+}
+    90%{
+    opacity:1
+}100%{
+    opacity:0
+}*/
+    0%{opacity: 0}
+    20% { opacity: 1}
+    80%{ opacity: 1}    
+    100%{opacity: 0}
+}
+
+/*from right to left*/
+@keyframes slideinleft{
+    /*0%{
+    opacity:0
+}90%{
+    opacity:1
+}100%{
+    opacity:0
+}*/
+    0%{opacity: 0; transform: translateX(100%);}
+    10%{transform: translateX(0%);}
+    20% { opacity: 1}    
+    /*
+    80%{opacity: 1;
+        transform: translateX(0%);}
+    90%{opacity: 0;    
+        transform:
+            translateX(-90%);
+    }    
+    100%{opacity: 0;
+        transform:
+            translateX(-100%);
+    }*/
+}
+@keyframes slideoutleft{
+    0%{opacity: 1;
+        transform: translateX(0%);}
+    10%{opacity: 0;    
+        transform:
+        translateX(-100%);
+    }
+}
+
+
+/*from left to right*/
+@keyframes slideinright{
+    0%{opacity: 0; transform: translateX(-100%);}
+    10%{transform: translateX(0%);}
+    20% { opacity: 1}
+}
+
+@keyframes slideoutright{
+    0%{opacity: 1;
+        transform: translateX(0%);}
+    10%{opacity: 0;    
+        transform:
+        translateX(100%);
+    }
+}
+
+
